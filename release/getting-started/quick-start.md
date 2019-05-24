@@ -166,13 +166,13 @@ Con Ember es muy sencillo transformar la lógica de tus plantillas en componente
 Vamos a crear un componente llamado `people-list` que podrá ser usado en distintos lugares de las plantillas para mostrar una lista de personas.
 
 Como es usual, existe un generador que nos ayudará en esta tarea.
-Make a new component by typing:
+Crea un nuevo componente con el siguiente comando:
 
 ```bash
 ember generate component people-list
 ```
 
-Copy and paste the `scientists` template into the `people-list` component's template and edit it to look as follows:
+Ahora copie y pegue el contenido de la plantilla `scientists` que creamos dentro de la plantilla del componente `people-list` creado en el paso anterior y edite como se muestra a continuación:
 
 ```handlebars {data-filename=app/templates/components/people-list.hbs}
 <h2>{{this.title}}</h2>
@@ -184,18 +184,17 @@ Copy and paste the `scientists` template into the `people-list` component's temp
 </ul>
 ```
 
-Note that we've changed the title from a hard-coded string ("List of Scientists") to a dynamic property (`{{title}}`).
-We've also renamed `scientist` to the more-generic `person`,
-decreasing the coupling of our component to where it's used.
+Note que hemos cambiado el título, de una cadena de texto "List of Scientists" a una propiedad dinámica llamada (`{{title}}`).
+También hemos cambiado `scientist` a algo más genérico: `person`,
+para facilitar su implementación en el proyecto.
 
-Save this template and switch back to the `scientists` template.
-Replace all our old code with our new componentized version.
+Guarde la plantilla del componente y regrese a la plantilla `scientists`.
+Reemplace todo el código de listado con esta versión que usa el componente creado.
 
-We're going to tell our component:
+Al componente vamos a enviarle:
 
-1. What title to use, via the `title` attribute.
-2. What array of people to use, via the `people` attribute. We'll
-   provide this route's `model` as the list of people.
+1. El título que usará por medio del atributo `title`.
+2. El arreglo con los datos de personas por medio del atributo `people`. Usaremos este modelo como el listado de personas.
 
 ```handlebars {data-filename="app/templates/scientists.hbs" data-diff="-1,-2,-3,-4,-5,-6,-7,+8"}
 <h2>List of Scientists</h2>
@@ -208,13 +207,12 @@ We're going to tell our component:
 <PeopleList @title="List of Scientists" @people={{this.model}} />
 ```
 
-Go back to your browser and you should see that the UI looks identical.
-The only difference is that now we've componentized our list into a version that's more reusable and more maintainable.
+Vuelva a su navegador y verá que la interfaz de usuario parece no haber cambiado.
+La única diferencia es que ahora tenemos un componente reusable y su código es más fácil de mantener.
 
-You can see this in action if you create a new route that shows a different list of people.
-As an exercise for the reader,
-you may try to create a `programmers` route that shows a list of famous programmers.
-By re-using the `people-list` component, you can do it in almost no code at all.
+Como ejercicio para usted,
+intente crear una ruta nueva llamada `programmers` que muestre una lista de programadores famosos.
+Usando el componente `people-list` lo logrará sin escribir código en absoluto.
 
 ## Click Events
 
