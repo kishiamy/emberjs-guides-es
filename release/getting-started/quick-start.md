@@ -6,7 +6,7 @@ Los pasos a seguir son los siguientes:
 2. Crear una nueva aplicación.
 3. Definir una ruta.
 4. Añadir un componente.
-5. Compilar tu aplicación para desplegar a producción.
+5. Compilar su aplicación para desplegar a producción.
 
 ## Instalar Ember
 
@@ -17,7 +17,7 @@ En su terminal ejecute el siguiente comando:
 npm install -g ember-cli
 ```
 
-No tiene instalado npm? [En este enlace aprenda cómo instalar Node.js y npm](https://docs.npmjs.com/getting-started/installing-node).
+¿No tiene instalado npm? [En este enlace aprenda cómo instalar Node.js y npm](https://docs.npmjs.com/getting-started/installing-node).
 Encontrará una lista completa de las dependencias necesarias para un proyecto de Ember CLI en nuestra guía [Instalar Ember](../../getting-started/).
 
 ## Crear una Nueva aplicación
@@ -31,7 +31,7 @@ ember new ember-quickstart
 ```
 
 Este comando se encargará de crear un nuevo directorio llamado `ember-quickstart` y dentro encontrará una nueva aplicación Ember.
-Tu aplicación incluirá:
+Su aplicación incluirá:
 
 * Un servidor de desarrollo.
 * Compilador de plantillas.
@@ -59,7 +59,7 @@ Serving on http://localhost:4200/
 
 Abra [`http://localhost:4200`](http://localhost:4200) en el navegador preferido.
 Debería ver una página de bienvenida de Ember.
-¡Felicitaciones! Ha creado e iniciado tu primera aplicación Ember.
+¡Felicitaciones! Ha creado e iniciado su primera aplicación Ember.
 
 Ahora vamos a comenzar a editar la plantilla principal llamada `application`.
 Esta plantilla se encuentra siempre presente en la pantalla mientras el usuario tenga cargada la aplicación Ember.
@@ -80,7 +80,7 @@ que significa que toda ruta anidada será mostrada en ese lugar.
 
 Ahora añadiremos a la aplicación una lista de científicos.
 El primer paso para hacerlo es crear una ruta.
-Por ahora, puede considerar a las rutas como las diferentes páginas que forman parte de tu aplicación.
+Por ahora, puede considerar a las rutas como las diferentes páginas que forman parte de su aplicación.
 
 Ember incluye generadores que automatizan el código repetitivo para las tareas comunes.
 Para generar una ruta, ejecute el siguiente comando en una nueva ventana de terminal desde el directorio de su aplicación `ember-quickstart`:
@@ -108,7 +108,7 @@ Lo que se muestra es el detalle de lo que Ember ha creado:
 3. Una entrada con la ruta en el fichero que maneja las rutas de la aplicación (localizado en `app/router.js`).
 4. Un fichero de prueba unitaria para esta ruta.
 
-Abra la reciente plantilla creada `app/templates/scientists.hbs` y añada el siguiente código HTML:
+Abra la recien creada plantilla `app/templates/scientists.hbs` y añada el siguiente código HTML:
 
 ```handlebars {data-filename=app/templates/scientists.hbs}
 <h2>List of Scientists</h2>
@@ -119,7 +119,7 @@ Usted podrá observar el título `<h2>` que puso en la plantilla `scientists.hbs
 justo debajo del título `<h1>` de su plantilla `application.hbs`.
 
 Ahora que tenemos la plantilla `scientists` mostrándose en nuestro navegador,
-vamos a incluir algo que datos para mostrar.
+vamos a incluir algo de datos para mostrar.
 Lo lograremos especificando un modelo (_model_) para esta ruta,
 y podemos especificar el modelo editando el fichero `app/routes/scientists.js`.
 
@@ -166,7 +166,7 @@ Con Ember es muy sencillo transformar la lógica de tus plantillas en componente
 Vamos a crear un componente llamado `people-list` que podrá ser usado en distintos lugares de las plantillas para mostrar una lista de personas.
 
 Como es usual, existe un generador que nos ayudará en esta tarea.
-Crea un nuevo componente con el siguiente comando:
+Para crear el nuevo componente use el siguiente comando:
 
 ```bash
 ember generate component people-list
