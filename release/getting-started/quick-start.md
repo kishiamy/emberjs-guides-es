@@ -214,13 +214,13 @@ Como ejercicio para usted,
 intente crear una ruta nueva llamada `programmers` que muestre una lista de programadores famosos.
 Usando el componente `people-list` lo logrará sin escribir código en absoluto.
 
-## Click Events
+## Evento Click
 
-So far, your application is listing data,
-but there is no way for the user to interact with the information.
-In web applications you often want to listen for user events like clicks or hovers.
-Ember makes this easy to do.
-First add an `action` helper to the `li` in your `people-list` component.
+En este punto, su aplicación está mostrando un listado con datos,
+pero no hay manera que el usuario pueda interactuar con la información mostrada.
+En las aplicaciones web es común que desee escuchar los eventos del usuarios como clicks o hovers.
+Ember facilita esta tarea.
+Primero añada un ayudante de tipo `action` al elemento `li` en su componente `people-list`.
 
 ```handlebars {data-filename="app/templates/components/people-list.hbs" data-diff="-5,+6"}
 <h2>{{this.title}}</h2>
@@ -233,14 +233,14 @@ First add an `action` helper to the `li` in your `people-list` component.
 </ul>
 ```
 
-The `action` helper allows you to add event listeners to elements and call named functions.
-By default, the `action` helper adds a `click` event listener,
-but it can be used to listen for any element event.
-Now, when the `li` element is clicked a `showPerson` function will be called from the `actions` object in the `people-list` component.
-Think of this like calling `this.actions.showPerson(person)` from our template.
+El ayudante de tipo `action` le permitirá añadir oyentes (listeners) de eventos e invocar functiones personalizadas.
+Por defecto, el ayudante de tipo `action` añade un oyente de eventos llamado `click`,
+pero puede agregar otros oyentes para cualquier evento del elemento.
+Ahora, queremos que cuando el elemento `li` sea clickeado una función sea llamada del objeto `actions` en el componente `people-list`.
+Imagina que lo que queremos lograr sería algo como `this.actions.showPerson(person)` desde nuestra plantilla.
 
-To handle this function call you need to modify the `people-list` component file to add the function to be called.
-In the component, add an `actions` object with a `showPerson` function that alerts the first argument.
+Para invocar esta función usted necesitará modificar el componente llamado `people-list` y añadir la función que será invocada.
+En el componente, añada un objeto de tipo `actions` con una función llamada `showPerson` que mostrará un cuadro de alerta con el primer argumento que recibe.
 
 ```javascript {data-filename="app/components/people-list.js" data-diff="+4,+5,+6,+7,+8"}
 import Component from '@ember/component';
@@ -254,8 +254,8 @@ export default Component.extend({
 });
 ```
 
-Now in the browser when a scientist's name is clicked,
-this function is called and the person's name is alerted.
+Ahora en el navegador, cuando el usuario haga click sobre el nombre de un científico,
+esta función será invocada para mostrar en un cuadro de alerta el nombre de la persona.
 
 ## Building For Production
 
