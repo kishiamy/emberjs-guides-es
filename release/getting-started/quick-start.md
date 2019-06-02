@@ -237,7 +237,7 @@ El ayudante de tipo `action` le permitirá añadir oyentes (listeners) de evento
 Por defecto, el ayudante de tipo `action` añade un oyente de eventos llamado `click`,
 pero puede agregar otros oyentes para cualquier evento del elemento.
 Ahora, queremos que cuando el elemento `li` sea clickeado una función sea llamada del objeto `actions` en el componente `people-list`.
-Imagina que lo que queremos lograr sería algo como `this.actions.showPerson(person)` desde nuestra plantilla.
+Imagine que lo que queremos lograr sería algo como `this.actions.showPerson(person)` desde nuestra plantilla.
 
 Para invocar esta función usted necesitará modificar el componente llamado `people-list` y añadir la función que será invocada.
 En el componente, añada un objeto de tipo `actions` con una función llamada `showPerson` que mostrará un cuadro de alerta con el primer argumento que recibe.
@@ -255,7 +255,7 @@ export default Component.extend({
 ```
 
 Ahora en el navegador, cuando el usuario haga click sobre el nombre de un científico,
-esta función será invocada para mostrar en un cuadro de alerta el nombre de la persona.
+esta función será invocada para mostrar el nombre de la persona en un cuadro de alerta.
 
 ## Building For Production
 
