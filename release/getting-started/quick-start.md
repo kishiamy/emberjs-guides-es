@@ -257,35 +257,22 @@ export default Component.extend({
 Ahora en el navegador, cuando el usuario haga click sobre el nombre de un científico,
 esta función será invocada para mostrar el nombre de la persona en un cuadro de alerta.
 
-## Building For Production
+## Compilando para producción
 
-Now that we've written our application and verified that it works in development,
-it's time to get it ready to deploy to our users.
-
-To do so, run the following command:
+Ahora que hemos escrito nuestra aplicación y comprobado que funciona en desarrollo, es el momento de prepararse para implantarlo en nuestros usuarios. Para ello, ejecutamos el siguiente comando:
 
 ```bash
 ember build --env production
 ```
 
-The `build` command packages up all of the assets that make up your
-application&mdash;JavaScript, templates, CSS, web fonts, images, and
-more.
+El comando `build` empaqueta todos los recursos para preparar su aplicacion&mdash; JavaScript, plantillas, CSS, fuentes, imágenes y mucho más.
 
-In this case, we told Ember to build for the production environment via the `--env` flag.
-This creates an optimized bundle that's ready to upload to your web host.
-Once the build finishes,
-you'll find all of the concatenated and minified assets in your application's `dist/` directory.
+En este caso, le decimos a Ember que compile para el entorno de producción for medio de la directiva `--env`. Esto crea un set optimizado listo para subir al servidor de su web. Una vez la compilación termine, encontrará todos los ficheros compilados, ya concatenados y minimizados en su directorio `dist/` de la aplicación.
 
-The Ember community values collaboration and building common tools that everyone relies on.
-If you're interested in deploying your app to production in a fast and reliable way,
-check out the [Ember CLI Deploy](http://ember-cli-deploy.com/) addon.
+La comunidad Ember valora la colaboración y la construcción de herramientas comunes en las que todos confían. Si está interesado en implementar su aplicación en producción de forma rápida y confiable, eche un vistazo al complemento [Ember CLI Deploy] (http://ember-cli-deploy.com/).
 
-If you deploy your application to an Apache web server, first create a new virtual host for the application.
-To make sure all routes are handled by index.html,
-add the following directive to the application's virtual host configuration:
+Si implementa su aplicación en un servidor web Apache, primero cree un nuevo servidor virtual para la aplicación. Para asegurarse de que todas las rutas sean manejadas por index.html, agregue la siguiente directiva a la configuración de servidor virtual de la aplicación:
 
 ```apacheconf
 FallbackResource index.html
 ```
-
