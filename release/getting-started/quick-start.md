@@ -259,7 +259,7 @@ esta función será invocada para mostrar el nombre de la persona en un cuadro d
 
 ## Compilando para producción
 
-Ahora que hemos escrito nuestra aplicación y comprobado que funciona en desarrollo, es el momento de prepararse para implantarlo en nuestros usuarios. Para ello, ejecutamos el siguiente comando:
+Ahora que hemos escrito nuestra aplicación y comprobado que funciona en desarrollo, es momento de desplegarlo en producción. Para ello, ejecutamos el siguiente comando:
 
 ```bash
 ember build --env production
@@ -267,11 +267,11 @@ ember build --env production
 
 El comando `build` empaqueta todos los recursos para preparar su aplicacion&mdash; JavaScript, plantillas, CSS, fuentes, imágenes y mucho más.
 
-En este caso, le decimos a Ember que compile para el entorno de producción for medio de la directiva `--env`. Esto crea un set optimizado listo para subir al servidor de su web. Una vez la compilación termine, encontrará todos los ficheros compilados, ya concatenados y minimizados en su directorio `dist/` de la aplicación.
+En este caso, le decimos a Ember que compile para el entorno de producción for medio del parámetro `--env`. Esto crea un conjunto de archivos optimizados listos para subir a su servidor web. Una vez la compilación termine, encontrará todos los ficheros minimizados y concatenados en su directorio `dist/` de la aplicación.
 
 La comunidad Ember valora la colaboración y la construcción de herramientas comunes en las que todos confían. Si está interesado en implementar su aplicación en producción de forma rápida y confiable, eche un vistazo al complemento [Ember CLI Deploy] (http://ember-cli-deploy.com/).
 
-Si implementa su aplicación en un servidor web Apache, primero cree un nuevo servidor virtual para la aplicación. Para asegurarse de que todas las rutas sean manejadas por index.html, agregue la siguiente directiva a la configuración de servidor virtual de la aplicación:
+Si despliega su aplicación en un servidor web Apache, primero cree un nuevo servidor virtual para la aplicación. Para asegurarse de que todas las rutas sean manejadas por index.html, agregue la siguiente directiva a la configuración de servidor virtual de la aplicación:
 
 ```apacheconf
 FallbackResource index.html
