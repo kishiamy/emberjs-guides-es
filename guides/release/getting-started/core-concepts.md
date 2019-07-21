@@ -1,9 +1,9 @@
-Antes de que comience a escribir código Ember, es buena idea tener una breve inducción sobre cómo funciona una aplicación Ember.
+Antes de que comience a escribir código Ember, es buena idea revisar brevemente sobre cómo funciona una aplicación Ember.
 
 ![Conceptos del núcleo](/images/ember-core-concepts/ember-core-concepts.png)
 
 ## Ruteadores y Manejadores de Rutas
-Imagine que estamos escribiendo una aplicación web para un sitio que permite a los usuarios listar sus propiedades para rentar. En algun momento, nosotros deberíamos ser capaces de responder preguntas sobre su estado actual como _¿Qué propiedad están buscando?_ y _¿Están editándolo?_ En Ember, la respuesta a esas preguntas es determinada por la URL.
+Imagine que estamos escribiendo una aplicación web para un sitio que permite a los usuarios listar sus propiedades para rentar. En algún momento, nosotros deberíamos ser capaces de responder preguntas sobre su estado actual como _¿Qué propiedad están buscando?_ y _¿Están editándolo?_ En Ember, la respuesta a esas preguntas es determinada por la URL.
 La URL puede ser definida en las siguientes formas:
 
 * El usuario carga la aplicación por primera vez.
@@ -28,7 +28,7 @@ La mayoría de plantillas con código base de Ember son instantáneamente famili
 <div>Hola, esta es una plantilla Ember válida!</div>
 ```
 
-Las plantillas de Ember usan la sintaxis de plantillas [Handlebars](http://handlebarsjs.com). Cualquier cosa que sea válida en Handlebars será válido en la sintaxis de las plantillas de Ember.
+Las plantillas de Ember usan la sintaxis de plantillas [Handlebars](http://handlebarsjs.com). Cualquier cosa que sea válido en Handlebars será válido en la sintaxis de las plantillas de Ember.
 
 Las plantillas también pueden mostrar propiedades proporcionadas desde su contexto, ya sea desde un componente o un controlador de rutas. Por ejemplo:
 
@@ -36,23 +36,23 @@ Las plantillas también pueden mostrar propiedades proporcionadas desde su conte
 <div>Hola {{this.name}}, esta es una plantilla Ember válida</div>
 ```
 
-En este ejemplo, `{{this.name}}` es una propiedad provista por el contexto de la plantilla.
+En este ejemplo, `{{this.name}}` es una propiedad proporcionada por el contexto de la plantilla.
 
 Además de propiedades, la notación de doble llaves (`{{}}`) podría contener helpers o ayudantes, de los cuales hablaremos más adelante.
 
 ## Modelos
 
-Modelos representan estado de persistencia.
+Los modelos representan estado de persistencia.
 
-Por ejemplo, una aplicación para alquiler de bienes raíces querría guardar los detalles de un alquiler cuando un usuario lo publica, entonces el alquiler tendría un modelo con la definición de dichos detalles, tal vez al modelo podamos llamarle _rental_.
+Por ejemplo, una aplicación para alquiler de bienes raíces querría guardar los detalles de un alquiler cuando un usuario lo publica, entonces el alquiler tendría un modelo con la definición de dichos detalles, tal vez el modelo podría llamarse _rental_.
 
-Un modelo normalmente persiste información a un servidor web, sin embargo modelos pueden configurarse para guardar información en otros lugares, como por ejemplo: el almacenamiento local del navegador (Local Storage).
+Un modelo normalmente persiste información a un servidor web, sin embargo los modelos pueden configurarse para guardar información en otros lugares, como por ejemplo: el almacenamiento local del navegador (Local Storage).
 
-## Components
+## Componentes
 
-Mientras las plantillas describen cómo se ve la interfaz de usuario, los componentes controla el _comportamiento_ de la interfaz de usuario.
+Mientras las plantillas describen cómo se ve la interfaz de usuario, los componentes controlan el _comportamiento_ de la interfaz de usuario.
 
-Los componentes consisten en dos partes: una plantilla escrita en Handlebars, y un archivo fuente escrito en Javascript que define el comportamiento del componente. Por ejemplo: nuestra aplicación podría tener un componente para mostrar todas los alquileres llamado `all-rentals`, y otro componente para mostrar el detalle de un solo alquiler llamado `rental-tile`. El componente `rental-tile` definiría el comportamiento que permite al usuario mostrar u ocultar la propiedad imagen del alquiler.
+Los componentes consisten en dos partes: una plantilla escrita en Handlebars, y un archivo fuente escrito en Javascript que define el comportamiento del componente. Por ejemplo: nuestra aplicación podría tener un componente llamado `all-rentals` para mostrar todos los alquileres, y otro componente para mostrar el detalle de un solo alquiler llamado `rental-tile`. El componente `rental-tile` definiría el comportamiento que permite al usuario mostrar u ocultar la propiedad imagen del alquiler.
 
 Veremos estos conceptos en acción construyendo una aplicación para alquiler de bienes raíces en la siguiente lección.
 
@@ -63,9 +63,9 @@ En Ember, usamos el término **hook** para métodos que son automáticamente inv
 Algunos ejemplos de un hook son:
 
 * [Hooks del ciclo de vida de un componente](../../components/the-component-lifecycle/): [`willRender()`](https://emberjs.com/api/ember/release/classes/Component/methods/willRender?anchor=willRender/) hook es llamado cada vez antes de renderizar un componente
-* Hooks de Rutas: El [`model()`](https://www.emberjs.com/api/ember/release/classes/Route/methods/model?anchor=model/) hook es usado para cargar el modelo en el modelo
+* Hooks de Rutas: El [`model()`](https://www.emberjs.com/api/ember/release/classes/Route/methods/model?anchor=model/) hook es usado para cargar el modelo en la ruta.
 
-En el siguiente ejemplo, el [`didRender()`](https://emberjs.com/api/ember/release/classes/Component/methods?anchor=didRender/) hook del ciclo de vida del componente es usado para registrar el mensaje "¡He renderizado!" en el log de la consola cada vez que el componente es renderizado.
+En el siguiente ejemplo, el [`didRender()`](https://emberjs.com/api/ember/release/classes/Component/methods?anchor=didRender/) hook, del ciclo de vida del componente, es usado para registrar el mensaje "¡He renderizado!" en el log de la consola del navegador cada vez que el componente es renderizado.
 
 ```javascript {data-filename=/app/components/foo-did-render-example.js}
 import Component from '@ember/component';
