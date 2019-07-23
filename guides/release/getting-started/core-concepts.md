@@ -3,7 +3,7 @@ Antes de que comience a escribir código Ember, es buena idea revisar brevemente
 ![Conceptos del núcleo](/images/ember-core-concepts/ember-core-concepts.png)
 
 ## Ruteadores y Manejadores de Rutas
-Imagine que estamos escribiendo una aplicación web para un sitio que permite a los usuarios listar sus propiedades para rentar. En algún momento, nosotros deberíamos ser capaces de responder preguntas sobre su estado actual como _¿Qué propiedad están buscando?_ y _¿Están editándolo?_ En Ember, la respuesta a esas preguntas es determinada por la URL.
+Imagine que estamos escribiendo una aplicación web para un sitio que permite a los usuarios listar viviendas para rentar. En algún momento, nosotros deberíamos ser capaces de responder preguntas sobre su estado actual como _¿Qué vivienda están buscando?_ y _¿Están editándola?_ En Ember, la respuesta a esas preguntas es determinada por la URL.
 La URL puede ser definida en las siguientes formas:
 
 * El usuario carga la aplicación por primera vez.
@@ -22,7 +22,7 @@ El manejador de la ruta normalmente hace dos cosas:
 
 Ember usa plantillas para organizar el diseño HTML en una aplicación.
 
-La mayoría de plantillas con código base de Ember son instantáneamente familiares, y se parecen a cualquier otro fragmento HTML. Por ejemplo:
+La mayoría de plantillas con código base de Ember resultan muy familiares, y se parecen a cualquier otro fragmento HTML. Por ejemplo:
 
 ```handlebars
 <div>Hola, esta es una plantilla Ember válida!</div>
@@ -44,7 +44,7 @@ Además de propiedades, la notación de doble llaves (`{{}}`) podría contener h
 
 Los modelos representan estado de persistencia.
 
-Por ejemplo, una aplicación para alquiler de bienes raíces querría guardar los detalles de un alquiler cuando un usuario lo publica, entonces el alquiler tendría un modelo con la definición de dichos detalles, tal vez el modelo podría llamarse _rental_.
+Por ejemplo, una aplicación para alquiler de viviendas querría guardar los detalles de una vivienda cuando un usuario lo publica, entonces la vivienda tendría un modelo con la definición de dichos detalles, tal vez el modelo podría llamarse _rental_.
 
 Un modelo normalmente persiste información a un servidor web, sin embargo los modelos pueden configurarse para guardar información en otros lugares, como por ejemplo: el almacenamiento local del navegador (Local Storage).
 
@@ -52,9 +52,9 @@ Un modelo normalmente persiste información a un servidor web, sin embargo los m
 
 Mientras las plantillas describen cómo se ve la interfaz de usuario, los componentes controlan el _comportamiento_ de la interfaz de usuario.
 
-Los componentes consisten en dos partes: una plantilla escrita en Handlebars, y un archivo fuente escrito en Javascript que define el comportamiento del componente. Por ejemplo: nuestra aplicación podría tener un componente llamado `all-rentals` para mostrar todos los alquileres, y otro componente para mostrar el detalle de un solo alquiler llamado `rental-tile`. El componente `rental-tile` definiría el comportamiento que permite al usuario mostrar u ocultar la propiedad imagen del alquiler.
+Los componentes consisten en dos partes: una plantilla escrita en Handlebars, y un archivo fuente escrito en Javascript que define el comportamiento del componente. Por ejemplo: nuestra aplicación podría tener un componente llamado `all-rentals` para mostrar todas las viviendas, y otro componente para mostrar el detalle de una sola vivienda llamado `rental-tile`. El componente `rental-tile` definiría el comportamiento que permite al usuario mostrar u ocultar la propiedad imagen de la vivienda.
 
-Veremos estos conceptos en acción construyendo una aplicación para alquiler de bienes raíces en la siguiente lección.
+Veremos estos conceptos en acción construyendo una aplicación para alquiler de viviendas en la siguiente lección.
 
 ## Hooks
 
