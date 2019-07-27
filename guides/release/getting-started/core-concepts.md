@@ -1,4 +1,4 @@
-Antes de que comience a escribir código Ember, es buena idea revisar brevemente sobre cómo funciona una aplicación Ember.
+Antes de que comience a escribir código Ember, es buena idea revisar brevemente cómo funciona una aplicación Ember.
 
 ![Conceptos del núcleo](/images/ember-core-concepts/ember-core-concepts.png)
 
