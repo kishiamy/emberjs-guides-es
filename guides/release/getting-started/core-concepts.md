@@ -1,4 +1,4 @@
-Antes de que comience a escribir código Ember, es buena idea revisar brevemente cómo funciona una aplicación Ember.
+Antes de que comience a escribir código en Ember, es buena idea revisar brevemente cómo funciona una aplicación en Ember.
 
 ![Conceptos del núcleo](/images/ember-core-concepts/ember-core-concepts.png)
 
@@ -44,7 +44,7 @@ Además de propiedades, la notación de doble llaves (`{{}}`) podría contener h
 
 Los modelos representan estado de persistencia.
 
-Por ejemplo, una aplicación para alquiler de viviendas querría guardar los detalles de una vivienda cuando un usuario lo publica, entonces la vivienda tendría un modelo con la definición de dichos detalles, tal vez el modelo podría llamarse _rental_.
+Por ejemplo, cuando un usuario publica los detalles de una vivienda en una aplicación para alquiler, necesitará un modelo con la definición de dichos detalles para persistirlos, el modelo podría llamarse _rental_.
 
 Un modelo normalmente persiste información a un servidor web, sin embargo los modelos pueden configurarse para guardar información en otros lugares, como por ejemplo: el almacenamiento local del navegador (Local Storage).
 
