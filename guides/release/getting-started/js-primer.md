@@ -127,10 +127,10 @@ Una `Promesa` es un objeto que puede producir un valor en el futuro: un valor re
 
 ¿Por qué se necesitan promesas en Ember? JavaScript tiene un único subproceso, y algunas cosas como la consulta de datos desde el servidor backend llevan tiempo, bloqueando así el subproceso. Es eficiente no bloquear el hilo mientras se realizan estos cálculos o recuperaciones de datos - ¡Promesas al rescate! Proporcionan una solución devolviendo un objeto proxy por un valor no necesariamente conocido cuando se crea la `Promesa`. Mientras se ejecuta el código `Promise`, el resto del código sigue adelante.
 
-Por ejemplo, declararemos una `Promesa` básica llamada "miPromesaObjeto".
+Por ejemplo, declararemos una `Promesa` básica llamada "myPromiseObject".
 
 ```javascript
-let myPromiseObject = new Promesa(function(resolve, reject) {
+let myPromiseObject = new Promise(function(resolve, reject) {
   // Cuando éxito
   resolve(value);
 
@@ -186,7 +186,7 @@ store.findRecord('persona', 1).then(function(persona) {
 })
 ```
 
-En el fragmento de código anterior, asumimos que una persona tiene muchos mensajes, y un mensaje tiene muchos comentarios. Así, `person.get('post')`devolverá un objeto `Promise`. Encadenamos la respuesta con `then()` para que cuando se resuelva, obtengamos el primer objeto de la colección resuelta. Luego, obtenemos comentarios de él con `myFirstPost.get('comment')`que de nuevo devolverá un objeto `promesa`, continuando así la cadena.
+En el fragmento de código anterior, asumimos que una persona tiene muchos mensajes, y un mensaje tiene muchos comentarios. Así, `person.get('post')`devolverá un objeto `Promise`. Encadenamos la respuesta con `then()` para que cuando se resuelva, obtengamos el primer objeto de la colección resuelta. Luego, obtenemos comentarios de él con `myFirstPost.get('comment')`que de nuevo devolverá un objeto `Promesa`, continuando así la cadena.
 
 ### Recursos
 
