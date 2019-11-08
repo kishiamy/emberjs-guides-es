@@ -57,7 +57,7 @@ if (verdadero) {
 
 Hay dos grandes diferencias entre `var` y ambos `const` y `let`. `const` y `let` son declaraciones a nivel de bloque, y *no son niveladas*.
 
-Debido a esto, no son accesibles fuera del alcance del bloque dado (es decir, en una `función` o en `{}`) en el que se declaran. Tampoco puede acceder a ellos antes de que sean declarados, o obtendrá un [`ReferenceError`] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError).
+Debido a esto, no son accesibles fuera del alcance del bloque dado (es decir, en una `función` o en `{}`) en el que se declaran. Tampoco puede acceder a ellos antes de que sean declarados, u obtendrá un [`ReferenceError`] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError).
 
 ```javascript
 console.log(nombre) // ReferenceError: el nombre no está definido
