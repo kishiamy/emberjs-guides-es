@@ -101,7 +101,7 @@ Como vimos antes, las declaraciones `let` se extienden al bloque al que pertenec
 Veamos algún código para ver cómo se ve esto. Si usas `var`, esto sucede:
 
 ```javascript
-para (var i = 0; i < 3; i++) {
+for (var i = 0; i < 3; i++) {
   console.log(i) // 0, 1, 2
 }
 
@@ -111,7 +111,7 @@ console.log(i) // 3
 Pero si usas `let`, esto sucede en su lugar:
 
 ```javascript
-para (let i = 0; i < 3; i++) {
+for (let i = 0; i < 3; i++) {
   console.log(i) // 0, 1, 2
 }
 
@@ -169,7 +169,7 @@ store.findRecord('persona', 1).then(function(persona) {
 
   return persona.get('post'); //obtener todos los mensajes relacionados con la persona.
 
-)).then(function(posts){función(posts)
+)).then(function(posts){function(posts)
 
   myFirstPost = posts.get('primerObjeto'); //obtiene el primer mensaje de la colección.
   return myFirstPost.get('comentario'); //obtener todos los comentarios vinculados a myFirstPost.
@@ -179,7 +179,7 @@ store.findRecord('persona', 1).then(function(persona) {
   // hacer algo con los comentarios
   return store.findRecord('book', 1); //búsqueda de otro registro
 
-).catch(función(err){
+).catch(function(err){
 
   //Errores de manejo
 
