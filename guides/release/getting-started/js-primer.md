@@ -40,13 +40,13 @@ if (true) {
 }
 ```
 
-En el ejemplo anterior, podemos ver que el primer `console.log(nombre)` imprime `indefinido` en lugar del valor. Esto se debe a una característica de JavaScript llamada *hoisting*. Cualquier declaración de variables es movida por el lenguaje de programación a la parte superior del alcance al que pertenece. Como vimos al principio, `var` se extiende a la función, por lo que el ejemplo anterior es el mismo que el anterior:
+En el ejemplo anterior, podemos ver que el primer `console.log(nombre)` imprime `undefined` en lugar del valor. Esto se debe a una característica de JavaScript llamada *hoisting*. Cualquier declaración de variables es movida por el lenguaje de programación a la parte superior del alcance al que pertenece. Como vimos al principio, `var` se extiende a la función, por lo que el ejemplo anterior es el mismo que el anterior:
 
 ```javascript
 var nombre;
 console.log(nombre); // undefined
 
-si (verdadero) {
+if (verdadero) {
   nombre = "Tomster";
 
   console.log(nombre); // "Tomster"
