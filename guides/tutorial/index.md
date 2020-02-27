@@ -1,10 +1,10 @@
-¡Bienvenido al tutorial de Ember! Este tutorial está destinado para introducir conceptos básicos de Ember al crear una aplicación de aspecto profesional. Si se queda atascado en cualquier momento durante el tutorial, siéntase libre de descargar [https://github.com/ember-learn/super-rentals](https://github.com/ember-learn/super-rentals) para un ejemplo de trabajo de la aplicación completa.
+¡Bienvenido al Tutorial de Ember! Este tutorial está destinado para introducir conceptos básicos de Ember al crear una aplicación de aspecto profesional. Si se queda atascado en cualquier momento durante el tutorial, siéntase libre de descargar [https://github.com/ember-learn/super-rentals](https://github.com/ember-learn/super-rentals) para un ejemplo de trabajo de la aplicación completa.
 
 Puede instalar la última versión de `Ember CLI` siguiendo el Guía de [Quick Start](../getting-started/quick-start/#toc_install-ember) Sección "Instalando Ember".
 
-Ember CLI, la interfaz de línea de comando de Ember, proporciona un proyecto de estructura estándar, un conjunto de herramientas de desarrollo, y un sistema de addons. Esto permite a los desarrolladores de Ember centrarse en la construcción de aplicaciones en lugar de que construir las estructuras de soporte que las hacen funcionar. Desde su línea de comandos, un rápido `ember --help` ayuda muestra los comandos que Ember CLI proporciona. Para más información sobre un comando específico, escriba `ember help <nombre del comando>`.
+Ember CLI, la interfaz de línea de comando de Ember, proporciona una estructura de proyecto estándar, un conjunto de herramientas de desarrollo, y un sistema de addons. Esto permite a los desarrolladores de Ember centrarse en la construcción de aplicaciones en lugar de construir las estructuras de soporte que las hacen funcionar. Desde su línea de comandos, un rápido `ember --help` ayuda muestra los comandos que Ember CLI proporciona. Para más información sobre un comando específico, escriba `ember help <nombre del comando>`.
 
-## Creando una nueva aplicación
+## Creando una Nueva Aplicación
 
 Para crear un nuevo proyecto usando Ember CLI, usa el comando `new`. En la preparación para el tutorial de la siguiente sección, puede hacer una aplicación llamada `super-rentals`.
 
@@ -18,7 +18,7 @@ Se creará un nuevo proyecto dentro de su directorio actual. Ahora puede ir a su
 cd super-rentals
 ```
 
-## Estructura del directorio
+## Estructura del Directorio
 
 El comando `new` genera una estructura de proyecto con los siguientes archivos y directorios:
 
@@ -46,7 +46,7 @@ Echemos un vistazo a las carpetas y archivos que genera Ember CLI.
 
 **node\_modules / package.json**: Este directorio y archivo son de npm. npm es el administrador de paquetes de Node.js. Ember está construido con Node y usa variedad de módulos Node.js para operar. El archivo `package.json` mantiene la lista de dependencias npm actuales para la aplicación. Cualquier complemento de Ember CLI que instale también aparecerá aquí. Los paquetes listados en `package.json` están instalados en el directorio node\ _modules.
 
-**public**: Este directorio contiene tanto imágenes como fuentes.
+**public**: Este directorio contiene tanto imágenes como archivos de fuentes tipográficas.
 
 **vendor**: Este directorio es donde van las dependencias del front-end (como JavaScript o CSS) que no son manejados por npm.
 
@@ -56,7 +56,7 @@ Echemos un vistazo a las carpetas y archivos que genera Ember CLI.
 
 ## Módulos
 
-Si miras en el `app/router.js`, notarás una sintaxis que puede que no sea familiar.
+Si echa un vistazo en el archivo `app/router.js`, se dará cuenta de una sintaxis que posiblemente no le sea familiar.
 
 ```javascript {data-filename=app/router.js}
 import EmberRouter from '@ember/routing/router';
@@ -77,7 +77,7 @@ Ember CLI utiliza módulos de JavaScript para organizar el código de la aplicac
 Por ejemplo, la línea `import EmberRouter de "@ember/routing/router";` nos da acceso a la clase de Ember Router como la variable `EmberRouter`. Y la línea `import config from './config/environment';` nos da acceso a los datos de configuración de nuestra aplicación como la variable `config`.  `Const` es una forma de declarar una variable de sólo lectura para asegurarse de que no se reasigna accidentalmente a otro lugar. Al final del fichero, `export default Router;` hace que la variable `Router` definida en este fichero esté disponible para otras partes de la aplicación.
 
 
-## El servidor de desarrollo
+## El Servidor de Desarrollo
 
 Una vez que tengamos un nuevo proyecto, podemos confirmar que todo funciona iniciando el servidor de desarrollo Ember:
 
@@ -85,7 +85,7 @@ Una vez que tengamos un nuevo proyecto, podemos confirmar que todo funciona inic
 ember serve
 ```
 
-or, for short:
+o, simplemente:
 
 ```bash
 ember s
