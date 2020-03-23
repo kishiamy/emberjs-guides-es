@@ -55,15 +55,15 @@ export default Route.extend({
 });
 ```
 
-Note que aquí estamos usando la sintaxis abreviada para definir métodos de ES6: `model()` es lo mismo que escribir `model: function()`.
+Usted puede notar que en el código estamos usando la sintaxis abreviada para definir métodos de ES6: `model()` es lo mismo que escribir `model: function()`.
 
-Ember will use the model object returned above and save it as an attribute called `model`,
-available to the rentals template we generated with our route in [Routes and Templates](../routes-and-templates/#toc_a-rentals-route).
+Ember usará el objeto model retornado en el código de arriba y lo guardará en un atributo llamado `model`,
+disponible para la plantilla rentals que generamos con nuestra ruta en [Rutas y Plantillas](../routes-and-templates/#toc_a-rentals-route).
 
-Now, let's switch over to our rentals page template.
-We can use the model attribute to display our list of rentals.
-Here, we'll use another common Handlebars helper called [`{{each}}`](../../templates/displaying-a-list-of-items/).
-This helper will let us loop through each of the rental objects in our model:
+Ahora, pasemos a nuestra plantilla de la página de alquiler de propiedades.
+Nosotros podemos user el atributo model para mostrar nuestra lista de propiedades para rentar.
+Aquí usaremos otro helper de Handlebars muy común llamado [`{{each}}`](../../templates/displaying-a-list-of-items/).
+Este helper nos permitirá recorrer cada uno de los objetos rental en nuestro modelo:
 
 ```handlebars {data-filename="app/templates/rentals.hbs" data-diff="+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29,+30"}
 <div class="jumbo">
@@ -98,23 +98,23 @@ This helper will let us loop through each of the rental objects in our model:
 {{/each}}
 ```
 
-In this template, we loop through each object.
-On each iteration, the current object gets stored in a variable called `rental`.
-From the rental variable in each step, we create a listing with information about the property.
+En esta plantilla, recorremos cada uno de los objetos.
+En cada iteración, el objeto actual queda guardado en una variable llamada `rental`.
+De la variable rental en cada iteración, creamos una lista con información sobre la propiedad de alquiler.
 
-You may move onto the [next page](../installing-addons/) to keep implementing new features, or continue reading on testing the app you've created.
+Puede seguir a la [siguiente página](../installing-addons/) para seguir implementando nuevas características, o continuar leyendo sobre realizar pruebas a la app que ha creado.
 
-### Application Testing the Rental List
+### Pruebas de Aplicación a la Lista de Alquileres
 
-To check that rentals are listed with an automated test, we will create a test to visit the index route and check that the results show 3 listings.
+Para revisar que las propiedades para alquiler son listadas con una prueba automatizada, tenemos que crear una prueba que visite la ruta index y revise que el resultado muestre 3 items en el listado.
 
-In `app/templates/rentals.hbs`, we wrapped each rental display in an `article` element, and gave it a class called `listing`.
-We will use the listing class to find out how many rentals are shown on the page.
+En la plantilla `app/templates/rentals.hbs` rodeamos cada muestra del alquiler con un elemento `article` y le pusimos una clase css llamada `listing`.
+Usaremos la clase CSS listing para averiguar cuantas propiedades de alquiler son mostradas en la página.
 
 
-To find the elements that have a class called `listing`, we'll use the method [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll).
-The `querySelectorAll` method returns the elements that match the given [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
-In this case it will return an array of all the elements with a class called `listing`.
+Para encontrar los elementos que tienen una clase CSS llamada `listing` usaremos el método [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll).
+El método `querySelectorAll` retorna los elementos que sean iguales al [selector CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+En este caso retornará un arreglo de todos los elementos con una clase CSS llamada `listing`.
 
 ```javascript {data-filename="tests/acceptance/list-rentals-test.js" data-diff="+2,+3"}
 test('should list available rentals.', async function(assert) {
@@ -123,9 +123,9 @@ test('should list available rentals.', async function(assert) {
 });
 ```
 
-Run the tests again using the command `ember t -s`, and toggle "Hide passed tests" to show your new passing test.
+Ejecuta las pruebas de nuevo usando el comando `ember t -s` y alterna el botón "Hide passed tests" para mostrar tus nuevas pruebas.
 
-Now we are listing rentals, and verifying it with an application test.
-This leaves us with 2 remaining application test failures (and 1 ESLint failure):
+En este punto estamos lstando propiedades de alquiler y verificándolo con una prueba de aplicación.
+Esto nos deja con 2 fallas restantes en las pruebas de aplicación (y 1 falla de ESLint):
 
 ![list rentals test passing](/images/model-hook/model-hook.png)
