@@ -14,7 +14,7 @@ Así se verá nuestra página de inicio cuado hayamos terminado:
 En Ember, los manejadores de ruta son los responsables de cargar el modelo con datos para la página.
 Este carga los datos en una función llamada [`model`](https://api.emberjs.com/ember/3.11/classes/Route/methods/model?anchor=model/).
 La función `model` actúa como un [hook](../../getting-started/core-concepts/#toc_hooks), lo que quiere decir que Ember lo llamará por nosotros en diferentes momentos en nuestra aplicación.
-La functión de modelo que hemos añadido a nuestro manejador de ruta `rentals` será llamado cuando un usuario navegue a la ruta rentals vía URL raíz `http://localhost:4200`, o via `http://localhost:4200/rentals`.
+La functión de modelo que hemos añadido a nuestro manejador de ruta `rentals` será llamado cuando un usuario navegue a la ruta rentals vía URL `http://localhost:4200`, o vía `http://localhost:4200/rentals`.
 
 Abramos el archivo `app/routes/rentals.js` y añadiremos una función `model` que retornará un arreglo de objetos de tipo rental:
 
@@ -61,7 +61,7 @@ Ember usará el objeto model retornado en el código de arriba y lo guardará en
 disponible para la plantilla rentals que generamos con nuestra ruta en [Rutas y Plantillas](../routes-and-templates/#toc_a-rentals-route).
 
 Ahora, pasemos a nuestra plantilla de la página de alquiler de propiedades.
-Nosotros podemos user el atributo model para mostrar nuestra lista de propiedades para rentar.
+Nosotros podemos usar el atributo model para mostrar nuestra lista de propiedades para rentar.
 Aquí usaremos otro helper de Handlebars muy común llamado [`{{each}}`](../../templates/displaying-a-list-of-items/).
 Este helper nos permitirá recorrer cada uno de los objetos rental en nuestro modelo:
 
@@ -125,7 +125,7 @@ test('should list available rentals.', async function(assert) {
 
 Ejecuta las pruebas de nuevo usando el comando `ember t -s` y alterna el botón "Hide passed tests" para mostrar tus nuevas pruebas.
 
-En este punto estamos lstando propiedades de alquiler y verificándolo con una prueba de aplicación.
+En este punto estamos listando propiedades de alquiler y verificándolo con una prueba de aplicación.
 Esto nos deja con 2 fallas restantes en las pruebas de aplicación (y 1 falla de ESLint):
 
 ![list rentals test passing](/images/model-hook/model-hook.png)
