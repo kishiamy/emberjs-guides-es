@@ -4,7 +4,9 @@ Para Super Rentals, queremos llegar a una página de inicio que muestre una list
 
 Comencemos construyendo nuestra página "about".
 
-En Ember, cuando queremos hacer una nueva página que se pueda visitar usando una URL, necesitamos generar una "ruta" usando Ember CLI. Para una descripción rápida de cómo Ember estructura las cosas, consulte [nuestro diagrama en la página Conceptos básicos] (https://guides.emberjs.com/release/getting-started/core-concepts/). Usemos el generador de rutas de Ember para comenzar nuestra ruta `about`.
+En Ember, cuando queremos hacer una nueva página que se pueda visitar usando una URL, necesitamos generar una "ruta" usando Ember CLI. Para una descripción rápida de cómo Ember estructura las cosas, consulte [nuestro diagrama en la página Conceptos básicos](https://guides.emberjs.com/release/getting-started/core-concepts/).
+
+Usemos el generador de rutas de Ember para comenzar nuestra ruta `about`.
 
 ```bash
 ember generate route about
@@ -16,7 +18,9 @@ or para abreviar,
 ember g route about
 ```
 
-_Nota: Al ejecutar `ember help generate`, se enumerarán otros recursos de Ember que también puedes crear ..._ Y esto es lo que imprime nuestro generador:
+_Nota: Al ejecutar `ember help generate`, se listarán otros recursos de Ember que también puedes crear ..._
+
+Y esto es lo que nuestro generador imprime:
 
 ```bash
 installing route
@@ -28,13 +32,13 @@ installing route-test
   create tests/unit/routes/about-test.js
 ```
 
-Una ruta en Ember se construye con tres partes:
+Una ruta en Ember es contruída con tres partes:
 
 1. Una entrada en el enrutador Ember (`/app/router.js`), que se asigna entre nuestro nombre de ruta y un URI específico
 2. Un archivo de controlador de ruta, que configura lo que debe suceder cuando se carga esa ruta _` (app/routes/about.js) `_
 3. Una plantilla de ruta, que es donde mostramos el contenido real de la página _` (app/templates/about.hbs) `_
 
-Si abrimos `/app/router.js`, veremos una nueva línea de código para la ruta ** about **, llamando `this.route ('about')` en la función `Router.map`. Esa nueva línea de código le dice al enrutador de Ember para ejecutar nuestro archivo `/app/routes/about.js` cuando un visitante navega a `/about`.
+Si abrimos `/app/router.js`, veremos una nueva línea de código para la ruta ** about **, llamando `this.route('about')` en la función `Router.map`. Esa nueva línea de código le dice al enrutador de Ember para ejecutar nuestro archivo `/app/routes/about.js` cuando un visitante navega a `/about`.
 
 
 ```javascript
@@ -67,7 +71,7 @@ Debido a que solo planeamos mostrar contenido estático en nuestra página acerc
 </div>
 ```
 
-Ahora ejecute `ember serve` (o` ember server`, o incluso `ember s` para abreviar /) en su línea de comando para comenzar el servidor de desarrollo Ember y luego vaya a [`http://localhost:4200/about`] (http://localhost:4200/about/) para ¡ver nuestra nueva página en acción!
+Ahora ejecute `ember serve` (o` ember server`, o incluso `ember s` para abreviar /) en su línea de comando para comenzar el servidor de desarrollo Ember y luego vaya a [`http://localhost:4200/about`](http://localhost:4200/about/) para ¡ver nuestra nueva página en acción!
 
 ## Una ruta de Contacto
 
@@ -103,7 +107,7 @@ Ahora, cuando vayamos a [`http://localhost:4200/contact`] (http://localhost:4200
 
 ## Navegando con enlaces y el Helper {{link-to}}
 
-Moverse por nuestro sitio es un poco difícil en este momento, así que hagámoslo más fácil. Pondremos un enlace a la página de contacto en la página acerca de (about), y un enlace correspondiente a la página acerca de en la página de contacto.
+Moverse por nuestro sitio es un poco difícil en este momento, así que hagámoslo más fácil. Pondremos un enlace a la página de contacto en la página "acerca de" (about), y un enlace correspondiente a la página "acerca de" en la página de contacto.
 
 Para hacer eso, usaremos un ayudante o helper [`{{link-to}}`] (https://guides.emberjs.com/release/templates/links/) que Ember proporciona para facilitar el enlace entre nuestras rutas. Vamos a ajustar nuestro archivo `about.hbs`:
 
@@ -122,11 +126,11 @@ Para hacer eso, usaremos un ayudante o helper [`{{link-to}}`] (https://guides.em
 </div>
 ```
 
-En este caso, le estamos diciendo al helper `{{link-to}}` el nombre de la ruta a la que queremos vincular: `contact`. Cuando miramos nuestra página 'acerca de' en [`http://localhost:4200/about`] (http://localhost:4200/about), ahora tenemos un enlace de trabajo a nuestra página de contacto:
+En este caso, le estamos diciendo al helper `{{link-to}}` el nombre de la ruta a la que queremos vincular: `contact`. Cuando miramos nuestra página **about** en [`http://localhost:4200/about`](http://localhost:4200/about), ahora tenemos un enlace de trabajo a nuestra página **contact**:
 
 ![super rentals about page screenshot](/images/routes-and-templates/ember-super-rentals-about.png)
 
-Ahora, agregaremos nuestro enlace correspondiente a la página de contacto para que podamos avanzar y retroceder entre `about` y` contact`:
+Ahora, agregaremos nuestro enlace correspondiente a la página about para que podamos avanzar y retroceder entre `about` y` contact`:
 
 ```handlebars
 <div class="jumbo">
@@ -172,7 +176,7 @@ Y luego vamos a actualizar nuestra nueva plantilla (`/app/templates/rentals.hbs`
 
 ## La Ruta Índice
 
-Con nuestras tres rutas en su lugar, estamos listos para agregar una ruta de índice, que manejará las solicitudes al URI raíz (`/`) de nuestro sitio. Nos gustaría hacer que la página de alquileres sea la página principal de nuestra aplicación, y ya hemos creado una ruta. Por lo tanto, queremos que nuestra ruta de índice simplemente reenvíe a la ruta de `rentals` que ya hemos creado.
+Con nuestras tres rutas en su lugar, estamos listos para agregar una ruta índice, que manejará las solicitudes al URI raíz (`/`) de nuestro sitio. Nos gustaría hacer que la página de alquileres sea la página principal de nuestra aplicación, y ya hemos creado una ruta. Por lo tanto, queremos que nuestra ruta de índice simplemente reenvíe a la ruta de `rentals` que ya hemos creado.
 
 Usando el mismo proceso que hicimos para nuestras páginas acerca de y de contacto, primero generaremos una nueva ruta llamada `index`.
 
