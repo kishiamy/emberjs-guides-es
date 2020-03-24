@@ -1,7 +1,6 @@
 Ahora, vamos a añadir una lista de inmuebles disponibles para renta a la página rentals que ya habíamos creado.
 
 Ember guarda los datos para una página en un objeto llamado `model`.
-Para comenzar, llenaremos el modelo de nuestra página de propiedades en renta con un arreglo estático(hard-coded) de objetos Javascript.
 Comenzaremos con algo sencillo,
 llenaremos el modelo de nuestra página de propiedades en renta con un arreglo de objetos Javascript en el código (hard-coded).
 Después, lo cambiaremos para usar [Ember Data](https://github.com/emberjs/data),
@@ -14,7 +13,7 @@ Así se verá nuestra página de inicio cuado hayamos terminado:
 En Ember, los manejadores de ruta son los responsables de cargar el modelo con datos para la página.
 Este carga los datos en una función llamada [`model`](https://api.emberjs.com/ember/3.11/classes/Route/methods/model?anchor=model/).
 La función `model` actúa como un [hook](../../getting-started/core-concepts/#toc_hooks), lo que quiere decir que Ember lo llamará por nosotros en diferentes momentos en nuestra aplicación.
-La functión de modelo que hemos añadido a nuestro manejador de ruta `rentals` será llamado cuando un usuario navegue a la ruta rentals vía URL `http://localhost:4200`, o vía `http://localhost:4200/rentals`.
+La función de modelo que hemos añadido a nuestro manejador de ruta `rentals` será llamado cuando un usuario navegue a la ruta rentals vía URL `http://localhost:4200`, o vía `http://localhost:4200/rentals`.
 
 Abramos el archivo `app/routes/rentals.js` y añadiremos una función `model` que retornará un arreglo de objetos de tipo rental:
 
@@ -109,7 +108,7 @@ Puede seguir a la [siguiente página](../installing-addons/) para seguir impleme
 Para revisar que las propiedades para alquiler son listadas con una prueba automatizada, tenemos que crear una prueba que visite la ruta index y revise que el resultado muestre 3 items en el listado.
 
 En la plantilla `app/templates/rentals.hbs` rodeamos cada muestra del alquiler con un elemento `article` y le pusimos una clase css llamada `listing`.
-Usaremos la clase CSS listing para averiguar cuantas propiedades de alquiler son mostradas en la página.
+Usaremos la clase CSS listing para saber el número de propiedades de alquiler son mostradas en la página.
 
 
 Para encontrar los elementos que tienen una clase CSS llamada `listing` usaremos el método [`querySelectorAll`](https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll).
