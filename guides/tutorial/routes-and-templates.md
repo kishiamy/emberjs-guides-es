@@ -283,9 +283,9 @@ Ember ofrece una variedad de helpers de test de aplicaciones para facilitar las 
 
 Algunos de los ayudantes que usaremos comúnmente son:
 
-* [`visit`] (https://github.com/emberjs/ember-test-helpers/blob/master/API.md#visit): carga una URL determinada
-* [`click`] (https://github.com/emberjs/ember-test-helpers/blob/master/API.md#click) - pretende ser un usuario haciendo clic en una parte específica de la pantalla
-* [`currentURL`] (https://github.com/emberjs/ember-test-helpers/blob/master/API.md#currenturl): devuelve la URL de la página en la que estamos actualmente
+* [`visit`](https://github.com/emberjs/ember-test-helpers/blob/master/API.md#visit): carga una URL determinada
+* [`click`](https://github.com/emberjs/ember-test-helpers/blob/master/API.md#click) - pretende ser un usuario haciendo clic en una parte específica de la pantalla
+* [`currentURL`](https://github.com/emberjs/ember-test-helpers/blob/master/API.md#currenturl): devuelve la URL de la página en la que estamos actualmente
 
 Importemos estos helpers a nuestra prueba de aplicación:
 
@@ -315,11 +315,11 @@ test('should link to contact information', async function(assert) {
 });
 ```
 
-En las pruebas anteriores, estamos utilizando [`assert.equal()`] (https://api.qunitjs.com/assert/equal) para verificar si el primer y el segundo argumento son iguales. Si no lo hacen, nuestra prueba fallará.
+En las pruebas anteriores, estamos utilizando [`assert.equal()`](https://api.qunitjs.com/assert/equal) para verificar si el primer y el segundo argumento son iguales. Si no lo hacen, nuestra prueba fallará.
 
 El tercer argumento opcional nos permite proporcionar un mensaje más agradable que se mostrará si esta prueba falla.
 
-En nuestras pruebas, también llamamos a dos ayudantes (`visit` y` click`) uno tras otro. Aunque Ember hace una serie de cosas cuando hacemos esas llamadas, Ember oculta esas complejidades al darnos estos [ayudantes de prueba asincrónicos] (../../testing/accept/#toc_asynchronous-helpers).
+En nuestras pruebas, también llamamos a dos ayudantes (`visit` y` click`) uno tras otro. Aunque Ember hace una serie de cosas cuando hacemos esas llamadas, Ember oculta esas complejidades al darnos estos [ayudantes de prueba asincrónicos](../../testing/accept/#toc_asynchronous-helpers).
 
 Si dejaste `ember test` en ejecución, debería haberse actualizado automáticamente para mostrar que las tres pruebas relacionadas con la navegación ya han pasado.
 
