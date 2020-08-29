@@ -45,19 +45,19 @@ Para el caso de este tutorial, usaremos mirage como nuestro origen de datos en l
 Mirage nos permitirá crear datos falsos para trabajar mientras desarrollamos la aplicación e imitará a un API.
 Los datos y los 'endpoints' que hemos configurado aquí entrarán en escena en el tutorial después, cuando comencemos a usar Ember Data para hacer peticiones al servidor.
 
-Install the Mirage addon as follows:
+Instalar el complemento Mirage con el siguiente comando:
 
 ```bash
 ember install ember-cli-mirage
 ```
 
-Our primary focus with mirage will be in the `config.js` file, which is where we can define our API endpoints and our data.
-We will be following the [JSON-API specification](http://jsonapi.org/) which requires our data to be formatted a certain way.
-Let's configure Mirage to send back our rentals that we had defined above by updating `mirage/config.js`.
+Nuestra primera tarea en mirage será en el fichero `config.js`, que es donde vamos a definir los endpoints de nuestra API y los datos de prueba.
+Seguiremos la [especificación JSON-API](http://jsonapi.org/) que requiere que nuestros datos se encuentren formateados en un específico formato.
+Configuremos Mirage para enviar de vuelta los datos de las propiedades del alquiler que hemos definido arriba actualizando el fichero `mirage/config.js`.
 
-Notice that in the first line of the function we set `this.namespace` to `/api`.
-Setting namespace lets mirage know to only provide data for URL requests that start with `api`.
-For example, the data we are providing below will be substituted when a request comes in at `/api/rentals`.
+Note que en la primera línea de la función hemos definido `this.namespace` con el valor `/api`.
+Ajustando el namespace le permitirá a mirage cómo proveer información únicamente a las peticiones que comiencen con `api`.
+Por ejemplo, los datos que estamos ajustando abajo serán provisto cuando una petición entre por `/api/rentals`.
 
 ```javascript {data-filename="mirage/config.js" data-diff="+1,+2,+3,+4,+5,+6,+7,+8,+9,+10,+11,+12,+13,+14,+15,+16,+17,+18,+19,+20,+21,+22,+23,+24,+25,+26,+27,+28,+29,+30,+31,+32,+33,+34,+35,+36,+37,+38,+39,+40,+41,+42,+43,+44,+45,-46,-47,-48,-49,-50,-51,-52,-53,-54,-55,-56,-57,-58,-59,-60,-61,-62,-63,-64,-65,-66,-67,-68,-69,-70"}
 export default function() {
@@ -132,17 +132,17 @@ export default function() {
 }
 ```
 
-Mirage works by overriding the JavaScript code that makes network requests and instead returns the JSON you specify.
-We should note that this means you will not see any network requests in your development tools but will instead see the JSON logged in your console.
-Our update to `mirage/config.js` configures Mirage so that whenever Ember Data makes a GET request to `/api/rentals`, Mirage will return this JavaScript object as JSON and no network request is actually made.
-We also specified a `namespace` of `/api` in our mirage configuration.
-Without this change, navigation to `/rentals` in our application would conflict with Mirage.
+Mirage trabaja anulando el código Javascript que hace la petición de red y en su lugar retorna el JSON que usted especifique.
+Nosotros deberíamos notar que esto significa que no verás ninguna petición de red en tus herramientas de desarrollo pero podrá ver en su lugar el JSON en la salida de su consola.
+Los cambios realizados en el fichero `mirage/config.js` configura Mirage para que en cualquier momento que Ember Data haga una petición GET a `/api/rentals`, Mirage retornará este objeto JavaScript como JSON y ninguna petición de red es hecha actualmente.
+También especificamos un `namespace` con `/api` en nuestra configuración de mirage.
+Sin este cambio, la navegación a `/rentals` en nuestra aplicación causaría un conflicto con Mirage.
 
-In order for this to work, we need our application to default to making requests to the namespace of `/api`.
-To do this, we want to generate an application adapter.
-An [Adapter](../../models/customizing-adapters/) is an object that [Ember Data](../../models/) uses to determine how we communicate with our backend.
-We will cover Ember Data in more detail later in this tutorial.
-For now, let's generate an adapter for our application:
+Ahora necesitamos que nuestra aplicación, por defecto, direccione las peticiones al namespace `/api`.
+Para lograr esto, vamos a generar un adaptador llamado application.
+Un [Adaptador](../../models/customizing-adapters/) es un objeto que [Ember Data](../../models/) utiliza para determinar cómo nos comunicaremos con nuestro backend.
+Cubriremos Ember Data en detalles después en este tutorial.
+Por ahora, generaremos un adaptador para nuestra aplicación:
 
 ```bash
 ember generate adapter application
@@ -158,6 +158,6 @@ export default DS.JSONAPIAdapter.extend({
 });
 ```
 
-If you were running `ember serve` or `ember test --serve` in another shell, restart each of those servers to include Mirage in your build.
+Si usted ejecutó `ember serve` o `ember test --serve` en otra terminal shell, reinícielos para refrescar los servidores e incluir Mirage en su compilado.
 
-Note that at this point of the tutorial, the data is still provided by the `app/routes/rentals.js` file. We will make use of the mirage data we set up here in the upcoming section called [Using Ember Data](../ember-data/).
+Note que en este punto, los datos aún son provistos por el fichero `app/routes/rentals.js`. Nosotros haremos uso de mirage data que hemos ajustado aquí en la siguiente sección llamada [Usando Ember Data](../ember-data/).
